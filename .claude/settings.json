@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm config *)",
+      "Bash(rm -f .npmrc)",
+      "Bash(pkill -f \"vite\")",
+      "Bash(nohup npm install --ignore-scripts)",
+      "Bash(echo \"started $!\")",
+      "Bash(lsof -p 14482 2>/dev/null | grep -E \"TCP|cacache\" | head -5; echo \"---npm debug---\"; ls -t ~/.npm/_logs/ 2>/dev/null | head -3)",
+      "Read(//Users/user/.npm/_logs/**)"
+    ]
+  }
+}
