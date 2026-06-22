@@ -25,13 +25,17 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-navy-950/80 backdrop-blur-md shadow-lg shadow-black/20' : 'bg-transparent'
+        scrolled ? 'border-b border-line bg-paper/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
         <a href="#home" className="flex items-center gap-3">
           <img src="/logo.png" alt="Zaina Nigeria Limited" className="h-9 w-auto rounded-sm" />
-          <span className="font-display text-lg font-semibold text-white">
+          <span
+            className={`font-display text-lg font-semibold transition-colors ${
+              scrolled ? 'text-navy-900' : 'text-white'
+            }`}
+          >
             ZAINA<span className="brand-text"> NIGERIA</span>
           </span>
         </a>
@@ -41,7 +45,9 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-mist-200/80 transition hover:text-brand-300"
+              className={`text-sm font-medium transition-colors hover:text-brand-500 ${
+                scrolled ? 'text-slate-500' : 'text-white/85'
+              }`}
             >
               {link.label}
             </a>
@@ -49,7 +55,7 @@ export default function Navbar() {
         </nav>
 
         <button
-          className="text-white lg:hidden"
+          className={`transition-colors lg:hidden ${scrolled ? 'text-navy-900' : 'text-white'}`}
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -64,7 +70,7 @@ export default function Navbar() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden bg-navy-950/95 backdrop-blur-md lg:hidden"
+            className="overflow-hidden border-b border-line bg-paper/95 backdrop-blur-md lg:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-4">
               {LINKS.map((link) => (
@@ -72,7 +78,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="py-2 text-sm font-medium text-mist-200/85 hover:text-brand-300"
+                  className="py-2 text-sm font-medium text-slate-500 hover:text-brand-600"
                 >
                   {link.label}
                 </a>

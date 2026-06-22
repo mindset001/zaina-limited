@@ -6,11 +6,11 @@ import { gallery } from '../../data/content'
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="relative bg-navy-900 py-28">
+    <section id="gallery" className="relative bg-paper-soft py-28">
       <Container>
         <Reveal>
           <Eyebrow>What We Do</Eyebrow>
-          <h2 className="max-w-2xl font-display text-3xl font-semibold text-white sm:text-4xl">
+          <h2 className="max-w-2xl font-display text-3xl font-semibold text-navy-900 sm:text-4xl">
             Our work, on the ground
           </h2>
         </Reveal>
@@ -21,7 +21,7 @@ export default function Gallery() {
               <motion.div
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3 }}
-                className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10"
+                className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-line shadow-sm"
               >
                 <img
                   src={item.image}

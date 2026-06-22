@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="section-eyebrow mb-4">Contact</h4>
+            <h4 className="section-eyebrow mb-4 text-brand-400">Contact</h4>
             <ul className="space-y-3 text-sm text-mist-200/80">
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-brand-400" /> {company.phone}
@@ -37,7 +37,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="section-eyebrow mb-4">Head Office</h4>
+            <h4 className="section-eyebrow mb-4 text-brand-400">Head Office</h4>
             <p className="flex items-start gap-3 text-sm text-mist-200/80">
               <MapPin size={16} className="mt-0.5 shrink-0 text-brand-400" />
               Abuja, Federal Capital Territory, Nigeria

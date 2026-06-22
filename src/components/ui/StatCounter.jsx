@@ -25,12 +25,12 @@ export default function StatCounter({ to, suffix = '', prefix = '', label }) {
       transition={{ duration: 0.6 }}
       className="text-center"
     >
-      <div className="font-display text-4xl font-semibold text-white sm:text-5xl">
+      <div className="font-display text-4xl font-semibold text-navy-900 sm:text-5xl">
         {prefix}
         {value.toLocaleString()}
         {suffix}
       </div>
-      <div className="mt-2 text-sm uppercase tracking-wider text-mist-200/70">
+      <div className="mt-2 text-sm uppercase tracking-wider text-slate-400">
         {label}
       </div>
     </motion.div>

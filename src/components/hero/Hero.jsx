@@ -24,7 +24,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="section-eyebrow mb-5"
+          className="section-eyebrow mb-5 text-brand-300"
         >
           RC: 105264 — Since 1987
         </motion.p>
