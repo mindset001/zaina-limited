@@ -161,8 +161,24 @@ export const gallery = [
 ]
 
 export const ongoingProjects = [
-  { client: 'Central Bank of Nigeria', project: 'Damaturu Branch, Yobe State' },
-  { client: 'University of Maiduguri, Borno State', project: 'Centre of Excellence' },
-  { client: 'Central Bank of Nigeria, Kano Branch', project: 'Upgrade of Air Conditioning System' },
-  { client: 'Pearl Garden Estate', project: 'Uke, Tudun Wada, Nasarawa State' },
+  {
+    client: 'Central Bank of Nigeria',
+    project: 'Damaturu Branch, Yobe State',
+    image: '/images/bank-building.jpg',
+  },
+  {
+    client: 'University of Maiduguri, Borno State',
+    project: 'Centre of Excellence',
+    image: '/images/university-building.jpg',
+  },
+  {
+    client: 'Central Bank of Nigeria, Kano Branch',
+    project: 'Upgrade of Air Conditioning System',
+    image: '/images/technician-install.jpg',
+  },
+  {
+    client: 'Pearl Garden Estate',
+    project: 'Uke, Tudun Wada, Nasarawa State',
+    image: '/images/modern-estate.jpg',
+  },
 ]

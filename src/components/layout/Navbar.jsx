@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import ThemeToggle from '../ui/ThemeToggle'
 
 const LINKS = [
   { href: '#about', label: 'About' },
@@ -25,7 +26,9 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'border-b border-line bg-paper/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
+        scrolled
+          ? 'border-b border-line bg-paper/90 backdrop-blur-md shadow-sm dark:border-navy-800 dark:bg-navy-950/90'
+          : 'bg-transparent'
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
@@ -33,7 +36,7 @@ export default function Navbar() {
           <img src="/logo.png" alt="Zaina Nigeria Limited" className="h-9 w-auto rounded-sm" />
           <span
             className={`font-display text-lg font-semibold transition-colors ${
-              scrolled ? 'text-navy-900' : 'text-white'
+              scrolled ? 'text-navy-900 dark:text-white' : 'text-white'
             }`}
           >
             ZAINA<span className="brand-text"> NIGERIA</span>
@@ -46,21 +49,27 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={`text-sm font-medium transition-colors hover:text-brand-500 ${
-                scrolled ? 'text-slate-500' : 'text-white/85'
+                scrolled ? 'text-slate-500 dark:text-mist-200/80' : 'text-white/85'
               }`}
             >
               {link.label}
             </a>
           ))}
+          <ThemeToggle />
         </nav>
 
-        <button
-          className={`transition-colors lg:hidden ${scrolled ? 'text-navy-900' : 'text-white'}`}
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-3 lg:hidden">
+          <ThemeToggle />
+          <button
+            className={`transition-colors ${
+              scrolled ? 'text-navy-900 dark:text-white' : 'text-white'
+            }`}
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -70,7 +79,7 @@ export default function Navbar() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden border-b border-line bg-paper/95 backdrop-blur-md lg:hidden"
+            className="overflow-hidden border-b border-line bg-paper/95 backdrop-blur-md dark:border-navy-800 dark:bg-navy-950/95 lg:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-4">
               {LINKS.map((link) => (
@@ -78,7 +87,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="py-2 text-sm font-medium text-slate-500 hover:text-brand-600"
+                  className="py-2 text-sm font-medium text-slate-500 hover:text-brand-600 dark:text-mist-200/85 dark:hover:text-brand-300"
                 >
                   {link.label}
                 </a>
